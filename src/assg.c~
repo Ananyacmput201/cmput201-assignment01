@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+  FILE *fp = fopen(argv[1], "r");
+  int coount;
+  char line[100];
+  
+  coount = 0;
+  while (fgets(line, 100, fp) != NULL){
+    coount++ ;
+  }  
+  printf("%d",coount);
+			
+  fclose(fp);
+
+  FILE *fopn = fopen(argv[1], "r");
+  char linee[100];
+  while (fgets(linee, 100, fopn) != NULL){
+    
+    int i = 0;
+    char direction;
+    for (i; linee[i] != '\0'; i++) {
+      if (linee[i] == '\n') {
+          linee[i] = '\0';}
+      if (linee[i] == 'E' || linee[i] == 'W' || linee[i] == 'N' || linee[i] == 'S'){
+	direction = linee[i];
+	      }
+    }
+    FILE *fop = fopen(linee, "r");
+    int stop_id;
+    int num_stop;
+    char stop[50];
+    char lin;
+    fscanf(fop, "%d%c %s %d",&stop_id,&lin, stop, &num_stop);
+    printf("%d %d %c", stop_id, num_stop, direction);
+    fclose(fop);
+  }
+
+      fclose(fopn);
+      return 0;
+}
