@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 /* CMPUT 201 Student Submission License
 Version 2.0
 
